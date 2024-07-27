@@ -1,0 +1,61 @@
+<div class="row m-4">
+    <div class="col-6 offset-3">
+        <section class="registro container">
+            <form class="custom-form " [formGroup]="formReserva" (ngSubmit)="CrearReserva()">
+                <div class="d-flex justify-content-center align-items-center p-3 rounded-2">
+                    <div class="contenedor3  w-100 d-flex flex-column justify-content-center align-items-center ">
+                        <h1 class="h1 text-center text-uppercase mb-3">hacer reserva</h1>
+
+                        <div class="mb-3 w-100">
+                            <label for="Nombres" class="nombre form-label fw-bold mb-0 ">Nombres</label>
+                            <input type="text" formControlName="idUsuario" class="formulario form-control "
+                                id="idUsuario" placeholder="">
+                        </div>
+                        <div class="mb-3 w-100">
+                            <label for="idDestino" class="nombre form-label fw-bold mb-0">Destino</label>
+                            <input type="text" formControlName="idDestino" class="formulario form-control"
+                                id="idDestino" placeholder="">
+                        </div>
+
+                        <div class="mb-3 w-100">
+                            <label for="cantidadPersonas" class="nombre form-label fw-bold mb-0">Cantidad e
+                                personas</label>
+                            <input type="number" formControlName="cantidadPersonas" class="formulario form-control"
+                                id="cantidadPersonas" placeholder="">
+                        </div>
+
+                        <div class="mb-3 w-100">
+                            <label for="Confirmar" class="nombre form-label fw-bold mb-0">Fechas Disponibles</label>
+                            <input type="date" formControlName="fechasDisponibles" class="formulario form-control"
+                                id="fechasDisponibles" placeholder="">
+                        </div>
+                        <button class="boton btn btn-secondary me-md-2 m-3" type="submit">Reservar</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+
+<section class="container">
+    <h1 class="text-center h1 text-white">RESERVACIONES</h1>
+    <div class="row m-5">
+        @for (item of infoReserva; track $index){
+        <div class="col-4">
+            <div class="card h-100 carta-color">
+                <div class="card-body">
+                    <h5 class="card-title">Reservacion confirmada</h5>
+                    <p class="card-text ">{{item.idUsuario}}</p>
+                    <p class="card-text ">{{item.idDestino}}</p>
+                    <p class="card-text ">{{item.cantidadPersonas}}</p>
+                    <p class="card-text ">{{item.fechasDisponibles}}</p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger p-2" type="button" (click)="borrarReserva(item._id)">Cancelar</button>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</section>

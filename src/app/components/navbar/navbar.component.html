@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+        <a class="navbar-brand d-lg-none" routerLink="/">
+            <img src="/assets/icons/TOURWALK2.png" class="icon" alt="Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 d-flex
+            justify-content-around w-100">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Destinos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/pacifico" href="#">Pacifico</a></li>
+                        <li><a class="dropdown-item" routerLink="/atlantico" href="#">Atlantico</a></li>
+                        <li><a class="dropdown-item" routerLink="/amazonia" href="#">Amazonia</a></li>
+                        <li><a class="dropdown-item" routerLink="/andina" href="#">Andina</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a routerLink="/planifica" href="#" class="nav-link bot">Planifica tu viaje</a>
+                </li>
+                <li class="nav-item d-none d-lg-block">
+                    <a routerLink="/inicio">
+                        <img src="/assets/icons/TOURWALK2.png" class="icon" alt="Logo" />
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+                    <a href="/assets/secciones/descuentos.html" class="nav-link bot">Descuentos</a>
+                </li>
+
+                <li>
+                    <div class="d-flex social-links logo-red">
+                        <img src="../assets/icons/facebook1.png" alt="Facebook" />
+                        <img src="../assets/icons/instagram1.png" alt="Instagram" />
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="icons/person-fill-exclamation.svg" alt="Login/Register">
+                    </a>
+                    <ul class="dropdown-menu me-lg-5">
+                        <li><a class="dropdown-item " routerLink="/ingreso">Iniciar sesión</a></li>
+                        <li><a class="dropdown-item" routerLink="/registro">Registrarse</a></li>
+                    </ul>
+                </li>
+
+        </div>
+        </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+
+@if (esAdministrador) {
+    <nav>
+        <ul>
+            <li class="nav-item">
+                <a routerLink="/admin/usuarios" class="nav-link bot">administracion</a>
+            </li>
+        </ul>
+    </nav>
+}

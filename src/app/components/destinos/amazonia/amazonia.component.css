@@ -1,0 +1,17 @@
+.mensj{
+    text-align: center;
+    font-family: 'poetsenone';
+    color: white;
+  }
+
+  .title-titulo, span{
+    border-radius: 30px;
+  }
+
+  .tarjetas-imagenes{
+    height: 237px;
+  }
+
+  .letra{
+    font-family: 'poetsenone';
+  }

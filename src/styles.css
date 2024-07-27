@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'poetsenone';
+    src: url('/assets/fonts/PoetsenOne-Regular.ttf');
+  }
+
+
+  body{
+    background: rgb(12,87,73); background: radial-gradient( rgba(130, 171, 187, 0.855) 0%, rgb(35, 39, 44) 80%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  .navbar{
+    background-color: #293B56;
+  }
+
+  .icon{
+    width: 80px;
+  }
+
+  .nav-link{
+    text-decoration: none;
+    font-family: 'poetsenone';
+    font-size: 20px;
+    color: white;
+  }
+
+  .logo-red img{
+    width: 40px;
+  }
+
+  .btn img{
+    width: 30px;
+  }
+
+  .text-center{
+    font-family: 'poetsenone';
+    font-size: 10px;
+    color: white;
+  }
+
+  .text-start{
+    font-family: 'poetsenone';
+  }
+
+  .mapas img{
+    width: 80%;
+  }
+
+  .targ-logi{
+    background:  #293B56;
+    border-radius: 40px;
+    height: 30vh;
+    transform: translate(80px, 150px);
+  }
+
+  .title-card{
+    font-family: 'poetsenone';
+    font-size: 35px;
+    color: white;
+  }
+
+  .parrafo-card{
+    text-align: center;
+    font-family: 'poetsenone';
+    font-size: 1rem;
+    color: white;
+  }
+
+  .slogan{
+    text-align: center;
+    width: 450px;
+    font-family: 'poetsenone';
+    font-size: 1.5rem;
+    color: #ffffffd0;
+    background:  #293B56;
+    border-radius: 40px;
+    height: 30vh;
+    transform: translate(-50px, 150px);
+  }
+

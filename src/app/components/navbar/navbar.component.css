@@ -1,0 +1,69 @@
+.navbar{
+  background-color: #293B56;
+}
+
+.buscar{
+    height: 30px;
+    padding-left: 40px;
+}
+
+.icon{
+  width: 80px;
+}
+
+.nav-link{
+  text-decoration: none;
+  font-family: 'poetsenone';
+  font-size: 20px;
+  color: white;
+}
+
+.logo-red img{
+  width: 40px;
+}
+
+.text-start{
+  font-family: 'poetsenone';
+}
+
+.targ-logi{
+  background: #467583d0;
+  border-radius: 40px;
+  height: 30vh;
+  transform: translate(80px, 150px);
+}
+
+.title-card{
+  font-family: 'poetsenone';
+  font-size: 35px;
+  color: white;
+}
+
+.parrafo-card{
+  text-align: center;
+  font-family: 'poetsenone';
+  font-size: 1rem;
+  color: white;
+}
+
+.slogan{
+  text-align: center;
+  width: 450px;
+  font-family: 'poetsenone';
+  font-size: 1.5rem;
+  color: #ffffffd0;
+  background: #467583d0;
+  border-radius: 40px;
+  height: 30vh;
+  transform: translate(-50px, 150px);
+}
+
+.social-links{
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-link{
+    margin-left: 30px;
+}

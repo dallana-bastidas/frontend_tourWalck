@@ -1,0 +1,47 @@
+<div class="custom-form mb-5" id="pepe">
+    <section class="fondo contenedor container">
+
+        <form c [formGroup]="fromContacto" (ngSubmit)="solicitarContacto()">
+            <div class="d-flex justify-content-center align-items-center  p-3 rounded-2">
+                <div class="contenedor2  w-50 d-flex flex-column
+            justify-content-center align-items-center ">
+
+                    <p class="frase m-auto d-flex justify-content-center pt-3 "> Nuestro equipo se pondra
+                        en
+                    </p>
+                    <p class="frase d-flex justify-content-center fw-bold "> contacto contigo!!!</p>
+
+                    <div class="d-flex gap-4 d-flex justify-content-center">
+                        <div class="mb-3 ">
+                            <label for="formGroupExampleInput" class="nombre form-label fw-bold mb-0 ">Nombre</label>
+                            <input type="text" class="formulario form-control " id="" placeholder="Nombre"
+                                formControlName="nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="formGroupExampleInput2" class="nombre form-label fw-bold mb-0">Correo
+                                Electronico</label>
+                            <input type="text" class="formulario form-control" id="" placeholder="Tu correo electronico"
+                                formControlName="correoElectronico">
+                        </div>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="name" class="fw-bold mb-0 h-50 ">Asunto</label>
+                        <input type="text" class="form-control" name="subject" id="subject" required
+                            style="width: 620px;" placeholder="Asunto" formControlName="asunto">
+                    </div>
+
+                    <div class="comentario form-floating mt-4">
+
+                        <textarea class="form-control" placeholder="Leave a
+                        comment here" id="txt-mensaje" name="txt-mensaje" formControlName="comentario"></textarea>
+                        <label for="floatingTextarea2">Comentario</label>
+                    </div>
+
+                    <button class="boton btn btn-secondary me-md-2 m-3 " type="submit">Enviar</button>
+
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
