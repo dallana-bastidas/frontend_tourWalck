@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root',
 })
 export class ApiService {
-    urlApi: string = 'http://3.140.245.6:4000/api/v1';
+    urlApi: string = 'http://3.141.8.151:4000/api/v1';
     esAdmin: boolean = false;
 
     constructor(private http: HttpClient) {}
