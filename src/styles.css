@@ -6,7 +6,7 @@
 
 
   body{
-    background: rgb(12,87,73); background: radial-gradient( rgba(130, 171, 187, 0.855) 0%, rgb(35, 39, 44) 80%);
+    /* background: rgb(12,87,73); background: radial-gradient( rgba(130, 171, 187, 0.855) 0%, rgb(35, 39, 44) 80%); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;

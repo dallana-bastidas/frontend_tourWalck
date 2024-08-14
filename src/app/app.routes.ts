@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { GestionReservaComponent } from './components/admin/gestion-reserva/gestion-reserva.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { DescuentosComponent } from './components/descuentos/descuentos.component';
 import { AmazoniaComponent } from './components/destinos/amazonia/amazonia.component';
 import { AndinaComponent } from './components/destinos/andina/andina.component';
 import { AtlanticoComponent } from './components/destinos/atlantico/atlantico.component';
@@ -35,4 +36,5 @@ export const routes: Routes = [
     { path: 'planifica', component: PlanificaComponent },
     { path: 'pacificoslide', component: PacificoslideComponent },
     { path: 'reserva', component: ReservaComponent },
+    { path: 'descuentos', component: DescuentosComponent },
 ];

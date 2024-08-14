@@ -1,0 +1,37 @@
+ h2 {
+  color: #2c3e50;
+}
+
+.carusel-img{
+     height: 400px; /* Ajusta esta altura según tus necesidades */
+    object-fit: cover;
+    margin: 20px;
+}
+
+.seccion-uno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0px 20px 10px 20px;
+}
+
+
+
+
+.seccion-tres{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.consejos{
+    text-align: center;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    width: 1200px;
+}
+
+
+

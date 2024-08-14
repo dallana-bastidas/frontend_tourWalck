@@ -1,17 +1,34 @@
-.mensj{
-    text-align: center;
-    font-family: 'poetsenone';
-    color: white;
-  }
+  .card {
+    width: 250px;
+    height: 550px;
+    margin: 7px;
+    background-color:  #eac566;
+}
 
-  .title-titulo, span{
-    border-radius: 30px;
-  }
+.btn-fechas{
+    background-color: #1b1c1d;
+    color: #fff;
+    height: 40px;
 
-  .tarjetas-imagenes{
-    height: 237px;
-  }
+}
 
-  .letra{
-    font-family: 'poetsenone';
-  }
+.btn-reservar{
+    background-color: #293B56;
+    color: #fff;
+    height: 40px;
+}
+
+h5{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+img{
+    border-radius: 25px;
+}
+
+.amazonia{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}

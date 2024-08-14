@@ -1,0 +1,31 @@
+.header {
+  padding: 60px 55px;
+    background-image: url('/assets/img/navbar/navbar.jpg');
+     background-size:contain;
+  background-repeat: no-repeat;
+}
+
+.header-content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.header-content p {
+  font-size: 1.5em;
+}
+
+@media (max-width:600px){
+.header {
+  padding: 7px 23px;
+  height: 95px;
+}
+.header-content h1 {
+  font-size: 35px;
+  margin-top: 16px;
+}
+.header-content p {
+  font-size: 15px;
+  padding-right: 145px;
+  margin: 0;
+}
+}
