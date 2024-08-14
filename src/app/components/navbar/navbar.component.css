@@ -13,7 +13,7 @@
 
 .nav-link{
   text-decoration: none;
-  font-family: 'poetsenone';
+
   font-size: 20px;
   color: white;
 }
@@ -22,9 +22,7 @@
   width: 40px;
 }
 
-.text-start{
-  font-family: 'poetsenone';
-}
+
 
 .targ-logi{
   background: #467583d0;
@@ -34,14 +32,14 @@
 }
 
 .title-card{
-  font-family: 'poetsenone';
+
   font-size: 35px;
   color: white;
 }
 
 .parrafo-card{
   text-align: center;
-  font-family: 'poetsenone';
+
   font-size: 1rem;
   color: white;
 }
@@ -49,7 +47,7 @@
 .slogan{
   text-align: center;
   width: 450px;
-  font-family: 'poetsenone';
+
   font-size: 1.5rem;
   color: #ffffffd0;
   background: #467583d0;

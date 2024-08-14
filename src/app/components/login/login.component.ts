@@ -29,8 +29,8 @@ export class LoginComponent {
     loginUsuarioSistema() {
         this._apiServicio.postLoginUsuario(this.formLogin.value.email, this.formLogin.value.password).subscribe(
             (data) => {
-                this.router.navigate(['/destinos']);
-                localStorage.setItem("usuario",JSON.stringify(data))
+                this.router.navigate(['/admin/reservas']);
+                localStorage.setItem('usuario', JSON.stringify(data));
             },
             (error) => {
                 Swal.fire({
