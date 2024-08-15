@@ -12,7 +12,9 @@ import { LoginComponent } from './components/login/login.component';
 import { PacificoslideComponent } from './components/planifica/pacificoslide/pacificoslide.component';
 import { PlanificaComponent } from './components/planifica/planifica.component';
 import { RegistroComponent } from './components/registro/registro.component';
+import { ReservaCreadaComponent } from './components/reserva-creada/reserva-creada.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
+import { VerFechasComponent } from './components/ver-fechas/ver-fechas.component';
 
 export const routes: Routes = [
     { path: '', component: InicioComponent },
@@ -37,4 +39,6 @@ export const routes: Routes = [
     { path: 'pacificoslide', component: PacificoslideComponent },
     { path: 'reserva', component: ReservaComponent },
     { path: 'descuentos', component: DescuentosComponent },
+    { path: 'fechas', component: VerFechasComponent },
+    { path: 'reservas', component: ReservaCreadaComponent },
 ];
