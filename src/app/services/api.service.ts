@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ApiService {
-    urlApi: string = 'http://3.141.8.151:4000/api/v1';
+    urlApi: string = 'http://localhost:4000/api/v1';
     esAdmin: boolean = false;
 
     constructor(private http: HttpClient) {}
@@ -41,4 +42,9 @@ export class ApiService {
     deleteReserva(id: string) {
         return this.http.delete(`${this.urlApi}/eliminar-reserva/${id}`);
     }
+
+    getDestinosPorZona(zona: string): Observable<any[]> {
+        return this.http.get<any[]>(`${this.urlApi}/destinos/zona/${zona}`);
+    }
+    
 }

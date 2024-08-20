@@ -1,97 +1,50 @@
 <div id="pepe">
     <div class="main-box container letra pb-5 pt-2">
-        <div class="botones bg-white d-flex justify-content-center p-2 mt-4 title-titulo">
-            <span class="amazonia">
-                AMAZONIA
-            </span>
+      <div class="botones bg-white d-flex justify-content-center p-2 mt-4 title-titulo">
+        <span class="amazonia">AMAZONIA</span>
+      </div>
+
+      <section class="row row-cols-1 row-cols-md-4 g-4 pt-3">
+        <div *ngFor="let destino of destinos; trackBy: trackById" class="col">
+          <div *ngIf="destino.zona === 'amazonia'" class="card carta-color">
+            <h5 class="card-title">{{ destino.nombre }}</h5>
+            <img [src]="destino.imagenes[0]" class="card-img-top tarjetas-imagenes" style="padding: 10px;" alt="...">
+            <div class="card-body">
+              <p class="card-text">{{ destino.descripcion }}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <button type="button" class="btn btn-fechas" (click)="openDateModal(destino)">Fecha</button>
+              <a [routerLink]="['/admin/reservas']" [queryParams]="{ fecha: selectedDate, destino: destino.nombre }" class="btn btn-reservar">Reservar</a>
+            </div>
+          </div>
         </div>
-
-        <section class="row row-cols-1 row-cols-md-4 g-4 pt-3">
-
-            <div class="col">
-                <div class="card carta-color ">
-                    <h5 class="card-title">Leticia</h5>
-                    <img src="assets/img/amazonia/leticia.png" class="card-img-top tarjetas-imagenes"
-                        style="padding: 10px;" alt="...">
-                    <div class="card-body">
-                        <p class="card-text ">Capital de Amazonas, Leticia ofrece biodiversidad, avistamiento de aves y
-                            acceso al Parque Nacional Natural Amacayacu,
-                            explorando ríos y selvas.
-                        </p>
-                    </div>
-                    <div class="card-footer  d-flex justify-content-between">
-                        <a class="btn btn-fechas">Ver fechas</a>
-                        <a routerLink="/admin/reservas" class="btn btn-reservar">Reservar</a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col">
-                <div class="card carta-color ">
-                    <h5 class="card-title">Puerto Nariño</h5>
-                    <img src="assets/img/amazonia/puero rico.jpg" class="card-img-top tarjetas-imagenes"
-                        style="padding: 10px;" alt="...">
-                    <div class="card-body">
-                        <p class="card-text ">Pueblo sin vehículos, Puerto
-                            Nariño ofrece paseos en bote por el Amazonas,
-                            avistamiento de delfines rosados y culturas
-                            indígenas locales.
-                        </p>
-                    </div>
-                    <div class="card-footer  d-flex justify-content-between">
-                        <a class="btn btn-fechas">Ver fechas</a>
-                        <a routerLink="/admin/reservas" class="btn btn-reservar">Reservar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card carta-color">
-                    <h5 class="card-title">Parque Natural </h5>
-                    <img src="assets/img/amazonia/parque nacional.png" class="card-img-top tarjetas-imagenes"
-                        style="padding: 10px;" alt="...">
-                    <div class="card-body">
-                        <p class="card-text ">Refugio de biodiversidad, el
-                            parque ofrece caminatas guiadas, observación de
-                            jaguares, manatíes y aves exóticas, y vida
-                            amazónica.</p>
-                    </div>
-                    <div class="card-footer  d-flex justify-content-between">
-                        <a class="btn btn-fechas">Ver fechas</a>
-                        <a routerLink="/admin/reservas" class="btn btn-reservar">Reservar</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card  carta-color">
-                    <h5 class="card-title">Reserva Natural:</h5>
-                    <img src="assets/img/amazonia/parque natural.png" class="card-img-top tarjetas-imagenes"
-                        style="padding: 10px;" alt="...">
-                    <div class="card-body">
-
-                        <p class="card-text ">Cerca de Leticia, ofrece canopy,
-                            caminatas nocturnas y visitas a comunidades indígenas en
-                            un entorno conservado para
-                            ecoturismo..</p>
-                    </div>
-                    <div class="card-footer  d-flex justify-content-between">
-                        <a class="btn btn-fechas">Ver fechas</a>
-                        <a routerLink="/admin/reservas" class="btn btn-reservar">Reservar</a>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
+      </section>
     </div>
 
-    <!-- <section class="mt-4">
-        <div class="d-flex align-content-center justify-content-center mensj">
-            Planifica el viaje a tu gusto y descubre los diferentes destinos de Colombia que tenemos para ti.
-            <br>
-            Encontrarás diferentes ciudades, pueblos y sitios rodeados de naturaleza.
+    <!-- Modal para seleccionar fechas -->
+    <div *ngIf="isModalOpen" class="modal-overlay">
+      <div class="modal show d-block" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Selecciona una Fecha</h5>
+              <button type="button" class="close" (click)="closeModal()">
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ul class="list-group">
+                <li *ngFor="let fecha of availableDates" class="list-group-item" (click)="selectDate(fecha)">
+                  {{ fecha | date:'yyyy-MM-dd' }}
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+              <button type="button" class="btn btn-primary" (click)="confirmDate()">Aceptar</button>
+            </div>
+          </div>
         </div>
-    </section> -->
-</div>
+      </div>
+    </div>
+  </div>

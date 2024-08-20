@@ -1,13 +1,56 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ApiService } from '../../../services/api.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-atlantico',
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './atlantico.component.html',
   styleUrl: './atlantico.component.css'
 })
 export class AtlanticoComponent {
+    destinos: any[] = [];
+  availableDates: string[] = [];
+  selectedDate: string = '';
+  isModalOpen: boolean = false;
+
+  constructor(private _apiService: ApiService) {}
+
+  ngOnInit() {
+    this.listarDestinos();
+  }
+
+  ngAfterViewInit() {}
+
+  listarDestinos() {
+    this._apiService.getDestinosPorZona('atlantico').subscribe((data: any[]) => {
+      this.destinos = data;
+    });
+  }
+
+  trackById(index: number, destino: any): string {
+    return destino._id;
+  }
+
+  openDateModal(destino: any) {
+    this.availableDates = destino.fechasDisponibles;
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+    this.availableDates = [];
+  }
+
+  selectDate(fecha: string) {
+    this.selectedDate = fecha;
+  }
+
+  confirmDate() {
+    // Almacenar la fecha seleccionada y cerrar el modal
+    this.closeModal();
+  }
 
 }

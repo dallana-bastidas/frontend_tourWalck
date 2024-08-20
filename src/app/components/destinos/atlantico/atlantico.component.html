@@ -8,82 +8,45 @@
             </div>
 
             <section class="row row-cols-1 row-cols-md-4 g-4 pt-3">
-
-                <div class="col">
-                    <div class="card carta-color h-100">
-                        <h5 class="card-title">Barranquilla</h5>
-                        <img src="assets/img/atlantico/barranquilla.jpg" class="card-img-top tarjetas-imagenes"
-                            style="padding: 10px;" alt="...">
-                        <div class="card-body">
-                            <p class="card-text ">Ciudad costera famosa por su carnaval, rica cultura caribeña, vida
-                                nocturna vibrante y su puerto industrial. Ideal para
-                                festivales y gastronomía.
-
-                            </p>
-                        </div>
-                        <div class="card-footer  d-flex justify-content-between">
-                            <a class="btn btn-fechas">Ver fechas</a>
-                            <a routerLink="/admin/reservas" class="btn btn-reservar p-2">Reservar</a>
-                        </div>
+                <div *ngFor="let destino of destinos; trackBy: trackById" class="col">
+                  <div *ngIf="destino.zona === 'atlantico'" class="card carta-color">
+                    <h5 class="card-title">{{ destino.nombre }}</h5>
+                    <img [src]="destino.imagenes[0]" class="card-img-top tarjetas-imagenes" style="padding: 10px;" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">{{ destino.descripcion }}</p>
                     </div>
-                </div>
-
-                <div class="col">
-                    <div class="card carta-color h-100">
-                        <h5 class="card-title">Cartagena de Indias</h5>
-                        <img src="/assets/img/imgAtlantico/cartagena.webp" class="card-img-top tarjetas-imagenes"
-                            style="padding: 10px;" alt="...">
-                        <div class="card-body">
-                            <p class="card-text ">Ciudad histórica con murallas
-                                coloniales, playas hermosas, arquitectura
-                                encantadora y cultura vibrante. Ideal para
-                                turismo histórico y playas paradisíacas.
-                            </p>
-                        </div>
-                        <div class="card-footer  d-flex justify-content-between">
-                            <a class="btn btn-fechas p-2">Ver fechas</a>
-                            <a routerLink="/admin/reservas" class="btn btn-reservar">Reservar</a>
-                        </div>
+                    <div class="card-footer d-flex justify-content-between">
+                      <button type="button" class="btn btn-fechas" (click)="openDateModal(destino)">Fecha</button>
+                      <a [routerLink]="['/admin/reservas']" [queryParams]="{ fecha: selectedDate, destino: destino.nombre }" class="btn btn-reservar">Reservar</a>
                     </div>
+                  </div>
                 </div>
-
-                <div class="col">
-                    <div class="card h-100 carta-color">
-                        <h5 class="card-title">Santa Marta</h5>
-                        <img src="/assets/img/imgAtlantico/Sierra Nevada.jpg" class="card-img-top tarjetas-imagenes"
-                            style="padding: 10px;" alt="...">
-                        <div class="card-body">
-                            <p class="card-text ">Ciudad costera con playas,
-                                historia colonial, Parque Tayrona cercano, y punto
-                                de acceso a la Sierra Nevada. Perfecta
-                                para naturaleza y aventura.</p>
-                        </div>
-                        <div class="card-footer  d-flex justify-content-between">
-                            <a class="btn btn-fechas">Ver fechas</a>
-                            <a routerLink="/admin/reservas" class="btn btn-reservar">Reservar</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 carta-color">
-                        <h5 class="card-title">Isla de San Andrés</h5>
-                        <img src="assets/img/atlantico/sanAndres.jpg" class="card-img-top tarjetas-imagenes"
-                            style="padding: 10px;" alt="...">
-                        <div class="card-body">
-                            <p class="card-text ">Isla caribeña conocida por sus
-                                playas cristalinas, arrecifes de coral, cultura
-                                isleña única y deportes acuáticos. Ideal
-                                para relajación y buceo.</p>
-                        </div>
-                        <div class="card-footer  d-flex justify-content-between">
-                            <a class="btn btn-fechas">Ver fechas</a>
-                            <a routerLink="/admin/reservas" class="btn btn-reservar">Reservar</a>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
+              </section>
         </div>
+        <div *ngIf="isModalOpen" class="modal-overlay">
+            <div class="modal show d-block" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Selecciona una Fecha</h5>
+                    <button type="button" class="close" (click)="closeModal()">
+                      <span>&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <ul class="list-group">
+                      <li *ngFor="let fecha of availableDates" class="list-group-item" (click)="selectDate(fecha)">
+                        {{ fecha | date:'yyyy-MM-dd' }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" (click)="closeModal()">Cancelar</button>
+                    <button type="button" class="btn btn-primary" (click)="confirmDate()">Aceptar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
 </div>
