@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
     providedIn: 'root',
 })
 export class ApiService {
-    urlApi: string = 'http://localhost:4000/api/v1';
+    urlApi: string = 'http://52.14.31.190:4000/api/v1';
     esAdmin: boolean = false;
 
     constructor(private http: HttpClient) {}
@@ -46,5 +46,4 @@ export class ApiService {
     getDestinosPorZona(zona: string): Observable<any[]> {
         return this.http.get<any[]>(`${this.urlApi}/destinos/zona/${zona}`);
     }
-    
 }
